@@ -19,7 +19,7 @@ def choice_1():
     root.geometry("1366x768")
     root.resizable(width=True, height=True)
     root.iconbitmap(default="forrst.ico")
-    label_1 = Tk.Label(root, text=f"ИГРА УГАДАЙ ЭТОТ {33} ЦВЕТ", bg='cadet blue', font='Arial 30').pack()
+    label_1 = Tk.Label(root, text=f"ИГРА УГАДАЙ ЭТОТ {generator_color(rgb)} ЦВЕТ", bg='cadet blue', font='Arial 30').pack()
     btn1 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb)).place(x=100, y=140)
     btn2 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb)).place(x=500, y=140)
 
