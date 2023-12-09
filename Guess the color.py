@@ -9,9 +9,11 @@ def generator_color(rgb):
     rgb = (random.randint(0, 256), random.randint(0, 256), random.randint(0, 256))
     return "#%02x%02x%02x" % rgb
 
-# def hex_in_rgd(rgb):
-#     rgb1 = rgb.lstrip('#')
-#     c = tuple(int(rgb1[i:i + 2], 16) for i in (0, 2, 4))
+def hex_in_rgd(rgb):
+    global c
+    rgb = rgb.lstrip('#')
+    lv = len(rgb)
+    c = tuple(int(rgb[i:i + lv // 3], 16) for i in range(0, lv, lv // 3))
 
 def choice_1():
     root = Tk.Tk()
@@ -19,7 +21,7 @@ def choice_1():
     root.geometry("1366x768")
     root.resizable(width=True, height=True)
     root.iconbitmap(default="forrst.ico")
-    label_1 = Tk.Label(root, text=f"ИГРА УГАДАЙ ЭТОТ {generator_color(rgb)} ЦВЕТ", bg='cadet blue', font='Arial 30').pack()
+    label_1 = Tk.Label(root, text=f"ИГРА УГАДАЙ ЭТОТ {rgb} ЦВЕТ", bg='cadet blue', font='Arial 30').pack()
     btn1 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb)).place(x=100, y=140)
     btn2 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb)).place(x=500, y=140)
 
