@@ -8,6 +8,9 @@ def generator_color(rgb):
     rgb = (random.randint(0, 256), random.randint(0, 256), random.randint(0, 256))
     return "#%02x%02x%02x" % rgb
 
+def hex_in_rgd():
+    pass
+
 def choice_1():
     root = Tk.Tk()
     root.title("УГАДАЙ ЦВЕТ")
@@ -16,8 +19,6 @@ def choice_1():
     root.iconbitmap(default="forrst.ico")
     btn1 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb)).grid(column=0, row=0, padx=50, pady=50)
     btn2 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb)).grid(column=1, row=0, padx=50, pady=50)
-
-
 
 def choice_2():
     root = Tk.Tk()
@@ -29,7 +30,6 @@ def choice_2():
     btn2 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb)).place(x=500, y=140)
     btn3 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb)).place(x=900, y=140)
     btn4 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb)).place(x=100, y=350)
-
 
 def choice_3():
     root = Tk.Tk()
@@ -43,11 +43,6 @@ def choice_3():
     btn4 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb)).place(x=100, y=500)
     btn5 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb)).place(x=500, y=500)
     btn6 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb)).place(x=900, y=500)
-
-
-
-
-
 
 def guess():
     root = Tk.Tk()
@@ -67,9 +62,6 @@ def guess():
 
     btn_hard = Tk.Button(root, text='HARD', font='Arial 14', width=20, height=2, bg='#00944C',
                           activebackground='black', command=choice_3).place(x=950, y=175)
-
-
-
     root.mainloop()
 
 guess()
