@@ -4,12 +4,14 @@ from PIL import ImageColor
 import random
 
 rgb = (0, 0, 0)
+
 def generator_color(rgb):
     rgb = (random.randint(0, 256), random.randint(0, 256), random.randint(0, 256))
     return "#%02x%02x%02x" % rgb
 
-def hex_in_rgd():
-    pass
+# def hex_in_rgd(rgb):
+#     rgb1 = rgb.lstrip('#')
+#     c = tuple(int(rgb1[i:i + 2], 16) for i in (0, 2, 4))
 
 def choice_1():
     root = Tk.Tk()
@@ -17,8 +19,9 @@ def choice_1():
     root.geometry("1366x768")
     root.resizable(width=True, height=True)
     root.iconbitmap(default="forrst.ico")
-    btn1 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb)).grid(column=0, row=0, padx=50, pady=50)
-    btn2 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb)).grid(column=1, row=0, padx=50, pady=50)
+    label_1 = Tk.Label(root, text=f"ИГРА УГАДАЙ ЭТОТ {33} ЦВЕТ", bg='cadet blue', font='Arial 30').pack()
+    btn1 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb)).place(x=100, y=140)
+    btn2 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb)).place(x=500, y=140)
 
 def choice_2():
     root = Tk.Tk()
@@ -26,6 +29,7 @@ def choice_2():
     root.geometry("1366x768")
     root.resizable(width=True, height=True)
     root.iconbitmap(default="forrst.ico")
+    label_2 = Tk.Label(root, text=f"ИГРА УГАДАЙ ЭТОТ {33} ЦВЕТ", bg='cadet blue', font='Arial 30').pack()
     btn1 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb)).place(x=100, y=140)
     btn2 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb)).place(x=500, y=140)
     btn3 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb)).place(x=900, y=140)
@@ -37,6 +41,7 @@ def choice_3():
     root.geometry("1366x768")
     root.resizable(width=True, height=True)
     root.iconbitmap(default="forrst.ico")
+    label_3 = Tk.Label(root, text=f"ИГРА УГАДАЙ ЭТОТ {33} ЦВЕТ", bg='cadet blue', font='Arial 30').pack()
     btn1 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb)).place(x=100, y=290)
     btn2 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb)).place(x=500, y=290)
     btn3 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb)).place(x=900, y=290)
@@ -45,24 +50,24 @@ def choice_3():
     btn6 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb)).place(x=900, y=500)
 
 def guess():
-    root = Tk.Tk()
-    root.title("УГАДАЙ ЦВЕТ")
-    root.geometry("1250x400")
-    root.resizable(width=True, height=True)
-    root.iconbitmap(default="forrst.ico")
+    window = Tk.Tk()
+    window.title("УГАДАЙ ЦВЕТ")
+    window.geometry("1250x400")
+    window.resizable(width=True, height=True)
+    window.iconbitmap(default="forrst.ico")
 
-    label = Tk.Label(text="ИГРА УГАДАЙ ЦВЕТ КВАДРТА", bg='cadet blue', font='Arial 30').pack()
-    label1 = Tk.Label(text="ВЫБИРАЙ УРОВЕНЬ СЛОЖНОСИ: ", font='Arial 18').place(x=75, y=100)
+    label_name = Tk.Label(window, text="ИГРА УГАДАЙ ЦВЕТ КВАДРТА", bg='cadet blue', font='Arial 30').pack()
+    label_level = Tk.Label(window, text="ВЫБИРАЙ УРОВЕНЬ СЛОЖНОСИ: ", font='Arial 18').place(x=75, y=100)
 
-    btn_easy = Tk.Button(root, text='EASY', font='Arial 14', width=20, height=2, bg='#CCFFCC',
+    btn_easy = Tk.Button(window, text='EASY', font='Arial 14', width=20, height=2, bg='#CCFFCC',
                           activebackground='black', command=choice_1).place(x=150, y=175)
 
-    btn_middle = Tk.Button(root, text='MIDDLE', font='Arial 14', width=20, height=2, bg='#00ff00',
+    btn_middle = Tk.Button(window, text='MIDDLE', font='Arial 14', width=20, height=2, bg='#00ff00',
                           activebackground='black', command=choice_2).place(x=550, y=175)
 
-    btn_hard = Tk.Button(root, text='HARD', font='Arial 14', width=20, height=2, bg='#00944C',
+    btn_hard = Tk.Button(window, text='HARD', font='Arial 14', width=20, height=2, bg='#00944C',
                           activebackground='black', command=choice_3).place(x=950, y=175)
-    root.mainloop()
+    window.mainloop()
 
 guess()
 
