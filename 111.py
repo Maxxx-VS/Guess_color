@@ -16,6 +16,20 @@
 #
 # config=print(ImageColor.getcolor(root.cget('bg'), "RGB"))
 
+# def generator_color(rgb):
+#     global t
+#     global arr
+#     global color
+#     rgb = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+#     lst = list(t)
+#     lst[0] = rgb[0]
+#     lst[1] = rgb[1]
+#     lst[2] = rgb[2]
+#     t = tuple(lst)
+#     arr.append(t)
+#     color = random.choice(arr)
+#     return "#%02x%02x%02x" % rgb
+
 h = ['#75EBF0']
 h1 = "".join(h).lstrip('#')
 print (h1)
