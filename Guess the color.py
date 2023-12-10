@@ -22,8 +22,8 @@ def generator_color(rgb):
     color = random.choice(arr)
     return "#%02x%02x%02x" % rgb
 
-def switch(a):
-    print(a)
+def switch(rgb):
+    print(rgb)
 
     # pass
     # ttt = btn1.cget('text')
@@ -45,16 +45,9 @@ def choice_1():
     root.geometry("1366x768")
     root.resizable(width=True, height=True)
     root.iconbitmap(default="forrst.ico")
-    btn1 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb), command=lambda: switch(Tk.Button.cget('bg')), text =generator_color(rgb)).place(x=100, y=250)
-    btn2 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb), command=switch, text =generator_color(rgb)).place(x=900, y=250)
+    btn1 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb), text=root.cget('bg'), command=lambda: switch(color)).place(x=100, y=250)
+    btn2 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb), text=root.cget('bg'), command=lambda: switch(color)).place(x=900, y=250)
     label_1 = Tk.Label(root, text=f"УГАДАЙ ЭТОТ {color} ЦВЕТ", bg='cadet blue', font='Arial 30').pack()
-
-
-
-
-
-
-
 
 def choice_2():
     root = Tk.Tk()
