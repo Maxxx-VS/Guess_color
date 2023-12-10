@@ -4,15 +4,7 @@ from PIL import ImageColor
 import random
 
 rgb = t = (0, 0, 0)
-
 arr = []
-color_1 = ["#" + ''.join([random.choice('0123456789ABCDEF') for j in range(6)])for i in range(1)]
-color_2 = ["#" + ''.join([random.choice('0123456789ABCDEF') for j in range(6)])for i in range(1)]
-color_3 = ["#" + ''.join([random.choice('0123456789ABCDEF') for j in range(6)])for i in range(1)]
-color_4 = ["#" + ''.join([random.choice('0123456789ABCDEF') for j in range(6)])for i in range(1)]
-color_5 = ["#" + ''.join([random.choice('0123456789ABCDEF') for j in range(6)])for i in range(1)]
-color_6 = ["#" + ''.join([random.choice('0123456789ABCDEF') for j in range(6)])for i in range(1)]
-
 
 def generator_color(rgb):
     global t
@@ -29,7 +21,7 @@ def generator_color(rgb):
     return "#%02x%02x%02x" % rgb
 
 def switch(rgb):
-    print(rgb)
+    pass
 
 
 
@@ -40,9 +32,19 @@ def choice_1():
     root.geometry("1366x768")
     root.resizable(width=True, height=True)
     root.iconbitmap(default="forrst.ico")
-    btn1 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb), text=root.cget('bg'), command=lambda: switch(color)).place(x=100, y=250)
-    btn2 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb), text=root.cget('bg'), command=lambda: switch(color)).place(x=900, y=250)
-    label_1 = Tk.Label(root, text=f"УГАДАЙ ЭТОТ {color} ЦВЕТ", font='Arial 30').pack()
+    btn1 = Tk.Button(root,
+              width=45,
+              height=10,
+              bg='#%0x%0x%0x' % (random.randint(0, 256), random.randint(0, 256), random.randint(0, 256)),
+              text=root.cget('bg'),
+              command=lambda: switch(55)).place(x=100, y=250)
+    btn2 = Tk.Button(root,
+              width=45,
+              height=10,
+              bg='#%0x%0x%0x' % (random.randint(0, 256), random.randint(0, 256), random.randint(0, 256)),
+              text=root.cget('bg'),
+              command=lambda: switch(55)).place(x=900, y=250)
+    Tk.Label(root, text=f"УГАДАЙ ЭТОТ {3} ЦВЕТ", font='Arial 30').pack()
 
 def choice_2():
     root = Tk.Tk()
