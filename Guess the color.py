@@ -2,6 +2,7 @@ import tkinter as Tk
 from PIL import Image
 from PIL import ImageColor
 import random
+from functools import partial
 
 rgb = t = (0, 0, 0)
 arr = []
@@ -21,9 +22,15 @@ def generator_color(rgb):
     color = random.choice(arr)
     return "#%02x%02x%02x" % rgb
 
-def switch():
-    print(color)
-    print("#%02x%02x%02x" % rgb)
+def switch(a):
+    print(a)
+
+    # pass
+    # ttt = btn1.cget('text')
+    # print(ttt)
+
+    # print(color)
+    # print("#%02x%02x%02x" % rgb)
     # global color
     # if color == ImageColor.getcolor(root.cget('bg'), "RGB"):
     #     print("YES")
@@ -38,9 +45,14 @@ def choice_1():
     root.geometry("1366x768")
     root.resizable(width=True, height=True)
     root.iconbitmap(default="forrst.ico")
-    btn1 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb), command=switch).place(x=100, y=250)
-    btn2 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb), command=switch).place(x=900, y=250)
+    btn1 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb), command=lambda: switch(Tk.Button.cget('bg')), text =generator_color(rgb)).place(x=100, y=250)
+    btn2 = Tk.Button(root, width=45, height=10, bg=generator_color(rgb), command=switch, text =generator_color(rgb)).place(x=900, y=250)
     label_1 = Tk.Label(root, text=f"УГАДАЙ ЭТОТ {color} ЦВЕТ", bg='cadet blue', font='Arial 30').pack()
+
+
+
+
+
 
 
 
