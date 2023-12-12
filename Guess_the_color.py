@@ -2,6 +2,8 @@ import tkinter as Tk
 from PIL import Image
 from PIL import ImageColor
 import random
+import sys
+import os
 
 arr = []
 color_1 = ["#" + ''.join([random.choice('0123456789ABCDEF') for j in range(6)])for i in range(1)]
@@ -10,6 +12,12 @@ color_3 = ["#" + ''.join([random.choice('0123456789ABCDEF') for j in range(6)])f
 color_4 = ["#" + ''.join([random.choice('0123456789ABCDEF') for j in range(6)])for i in range(1)]
 color_5 = ["#" + ''.join([random.choice('0123456789ABCDEF') for j in range(6)])for i in range(1)]
 color_6 = ["#" + ''.join([random.choice('0123456789ABCDEF') for j in range(6)])for i in range(1)]
+
+def restart_program():
+    python = sys.executable
+    os.execl(python, python, * sys.argv)
+    os.startfile("Guess_the_color.py")
+
 def switch(bg):
     hex_color = "".join(bg).lstrip('#')
     rgb_color = tuple(int(hex_color[i:i + 2], 16) for i in (0, 2, 4))
@@ -19,7 +27,9 @@ def switch(bg):
         root.title("УГАДАЙ ЦВЕТ")
         root.geometry("1366x768")
         Tk.Label(root, bg=bg, text=f"ТЫ УГАДАЛ ЭТОТ: {random_color} ЦВЕТ", font='Arial 30 bold').pack()
-        Tk.Button(root, width=20, height=2, bg=bg, text=" ХХХ Good-bye ХХХ", font='Arial 30 bold', command=root.destroy).place(relx=0.5, rely=0.5, anchor='center')
+        arr.clear()
+        Tk.Button(root, width=20, height=2, bg=bg, text="ЗАКОНЧИТЬ ИГРУ", font='Arial 30 bold', command=restart_program).place(relx=0.5, rely=0.5, anchor='center')
+        Tk.Button(root, width=20, height=2, bg=bg, text="ЕЩЕ РАЗ", font='Arial 30 bold', command=guess).place(relx=0.5, rely=0.7, anchor='center')
         root.resizable(width=True, height=True)
         root.mainloop()
         print("YES")
