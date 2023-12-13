@@ -29,7 +29,6 @@ def switch(bg):
         Tk.Label(root, bg=bg, text=f"ТЫ УГАДАЛ ЭТОТ: {random_color} ЦВЕТ", font='Arial 30 bold').pack()
         arr.clear()
         Tk.Button(root, width=20, height=2, bg=bg, text="ЗАКОНЧИТЬ ИГРУ", font='Arial 30 bold', command=restart_program).place(relx=0.5, rely=0.5, anchor='center')
-        # Tk.Button(root, width=20, height=2, bg=bg, text="ЕЩЕ РАЗ", font='Arial 30 bold', command=guess).place(relx=0.5, rely=0.7, anchor='center')
         root.resizable(width=True, height=True)
         root.mainloop()
         print("YES")
