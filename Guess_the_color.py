@@ -16,7 +16,7 @@ color_6 = ["#" + ''.join([random.choice('0123456789ABCDEF') for j in range(6)])f
 def restart_program():
     python = sys.executable
     os.execl(python, python, * sys.argv)
-    os.startfile("Guess_the_color.py")
+    os.startfile("C:/Users/hot-z/PYTHON PROJECTS/pythonProject#10/Guess_the_color.py")
 
 def switch(bg):
     hex_color = "".join(bg).lstrip('#')
